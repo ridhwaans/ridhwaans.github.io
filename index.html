@@ -1,18 +1,69 @@
 <head>
 <style>
-body {
-	font-family: monospace
+:root {
+  --text-color: black;
+  --background-color: white;
 }
-a:hover {
-	color: black;
+body {
+	font-family: monospace;
+	font-size: 24px;
+	background-color: var(--background-color);
 }
 a:link {
     text-decoration: none;
 }
-a {
-	color: black;
+body, a, a:hover {
+	color: var(--text-color);
 }
 </style>
+<script>
+function getRandomColor() {
+  let letters = '0123456789ABCDEF';
+  let color = '';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+function invertHex(hexnum){
+  if(hexnum.length != 6) {
+    alert("Hex color must be six hex numbers in length.");
+    return false;
+  }
+	
+  hexnum = hexnum.toUpperCase();
+  let splitnum = hexnum.split("");
+  let resultnum = "";
+  let simplenum = "FEDCBA9876".split("");
+  let complexnum = new Array();
+  complexnum.A = "5";
+  complexnum.B = "4";
+  complexnum.C = "3";
+  complexnum.D = "2";
+  complexnum.E = "1";
+  complexnum.F = "0";
+	
+  for(i=0; i<6; i++){
+    if(!isNaN(splitnum[i])) {
+      resultnum += simplenum[splitnum[i]]; 
+    } else if(complexnum[splitnum[i]]){
+      resultnum += complexnum[splitnum[i]]; 
+    } else {
+      alert("Hex colors must only include hex numbers 0-9, and A-F");
+      return false;
+    }
+  }
+	
+  return resultnum;
+}
+function setStyle(){
+	let color = getRandomColor();
+	console.log(color);
+	document.documentElement.style.setProperty('--text-color', '#'+color);
+	document.documentElement.style.setProperty('--background-color', invertHex(color));
+}
+window.onload = setStyle;
+</script>
 <title>ridhwaans</title>
 </head>
 <body>
