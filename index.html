@@ -6,7 +6,7 @@
 }
 body {
 	font-family: monospace;
-	font-size: 24px;
+	font-size: 12px;
 	background-color: var(--background-color);
 }
 a:link {
@@ -17,52 +17,6 @@ body, a, a:hover {
 }
 </style>
 <script>
-function getRandomColor() {
-  let letters = '0123456789ABCDEF';
-  let color = '';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-function invertHex(hexnum){
-  if(hexnum.length != 6) {
-    alert("Hex color must be six hex numbers in length.");
-    return false;
-  }
-	
-  hexnum = hexnum.toUpperCase();
-  let splitnum = hexnum.split("");
-  let resultnum = "";
-  let simplenum = "FEDCBA9876".split("");
-  let complexnum = new Array();
-  complexnum.A = "5";
-  complexnum.B = "4";
-  complexnum.C = "3";
-  complexnum.D = "2";
-  complexnum.E = "1";
-  complexnum.F = "0";
-	
-  for(i=0; i<6; i++){
-    if(!isNaN(splitnum[i])) {
-      resultnum += simplenum[splitnum[i]]; 
-    } else if(complexnum[splitnum[i]]){
-      resultnum += complexnum[splitnum[i]]; 
-    } else {
-      alert("Hex colors must only include hex numbers 0-9, and A-F");
-      return false;
-    }
-  }
-	
-  return resultnum;
-}
-function setStyle(){
-	let color = getRandomColor();
-	console.log(color);
-	document.documentElement.style.setProperty('--text-color', '#'+color);
-	document.documentElement.style.setProperty('--background-color', invertHex(color));
-}
-window.onload = setStyle;
 </script>
 <title>ridhwaans</title>
 </head>
@@ -85,6 +39,7 @@ window.onload = setStyle;
 <br><a href="mailto:shakeel.ridhwaan@gmail.com">shakeel.ridhwaan@gmail.com</a>
 <br><a href="https://www.quora.com/profile/Ridhwaan-Shakeel">https://www.quora.com/profile/Ridhwaan-Shakeel</a>
 <br><a href="https://www.youtube.com/user/ridhwaans">https://www.youtube.com/user/ridhwaans</a>
+<br><a href="https://open.spotify.com/user/22jhmszf4wnncjrvx5w5s2pbi?si=IGqObH-YRhOjnU4ypulCvA">https://open.spotify.com/user/22jhmszf4wnncjrvx5w5s2pbi?si=IGqObH-YRhOjnU4ypulCvA</a>
 <br><a href="https://kit.com/ridhwaans">https://kit.com/ridhwaans</a>
 <br>
 <br><a href="https://www.twitch.tv/ridhwaans">https://www.twitch.tv/ridhwaans</a>
